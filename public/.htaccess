@@ -1,0 +1,7 @@
+# Front-controller routing for Apache (Hostinger and any shared host).
+# Real files — the CSS, JS and images under /assets — are served directly;
+# every other path goes to index.php, which serves the app shell or the API.
+Options -Indexes
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
